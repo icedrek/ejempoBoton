@@ -1,9 +1,7 @@
 package com.example.ejemploboton
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ejemploboton.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
