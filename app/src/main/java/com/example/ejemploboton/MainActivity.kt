@@ -1,5 +1,6 @@
 package com.example.ejemploboton
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ejemploboton.databinding.ActivityMainBinding
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             binding.textView.text = if (binding.textView.text == greeting1) greeting2 else greeting1
+            startActivity(Intent(this, SecondActivity::class.java))
         }
     }
 }

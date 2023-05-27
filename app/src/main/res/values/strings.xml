@@ -3,4 +3,5 @@
     <string name="text_button">CAMBIAR SALUDO</string>
     <string name="greeting">Hello World!</string>
     <string name="greeting2">"Hola Gabi!"</string>
+    <string name="return_main">RETURN MAIN</string>
 </resources>
