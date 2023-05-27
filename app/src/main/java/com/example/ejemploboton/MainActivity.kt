@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.ejemploboton.databinding.ActivityMainBinding
+
+private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val newText: String = this.getString(R.string.greeting2)
-        findViewById<Button>(R.id.button)
-            .setOnClickListener {
-                findViewById<TextView>(R.id.textView).text = newText
-            }
+
+        binding.button.setOnClickListener {
+            binding.textView.text = newText
+        }
     }
 }
