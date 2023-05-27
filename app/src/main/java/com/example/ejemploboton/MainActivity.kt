@@ -14,10 +14,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val newText: String = this.getString(R.string.greeting2)
+        val greeting1 = this.getString(R.string.greeting)
+        val greeting2 = this.getString(R.string.greeting2)
 
         binding.button.setOnClickListener {
-            binding.textView.text = newText
+            binding.textView.text = if (binding.textView.text == greeting1) greeting2 else greeting1
         }
     }
 }
