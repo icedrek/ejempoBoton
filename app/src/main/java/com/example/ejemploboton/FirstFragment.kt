@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.ejemploboton.databinding.FragmentFirstBinding
 
 class FirstFragment : Fragment() {
+    private var _binding: FragmentFirstBinding? = null
+    private val binding get() = _binding!!
+
     private var param1: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +24,9 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        return binding.root
+        //return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
     companion object {
