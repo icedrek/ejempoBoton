@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.ejemploboton.FirstFragment.Companion.TEXT_OF_FRAGMENT
@@ -19,11 +20,21 @@ class SecondActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
+
             add<FirstFragment>(R.id.fragment_container, args = bundle)
         }
 
         binding.button2.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+        binding.button3.setOnClickListener {
+            val newFragment = SecondFragment()
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, newFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+
+
         }
     }
 }

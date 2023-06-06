@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.ejemploboton.databinding.FragmentFirstBinding
+import com.example.ejemploboton.databinding.FragmentSecondBinding
 
-class FirstFragment : Fragment() {
-    private var _binding: FragmentFirstBinding? = null
+class SecondFragment : Fragment() {
+    private var _binding: FragmentSecondBinding? = null
     private val binding get() = _binding!!
 
     private var param1: String? = null
@@ -24,9 +24,8 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
-        //return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
     companion object {
@@ -34,7 +33,7 @@ class FirstFragment : Fragment() {
 
         @JvmStatic
         fun newInstance(param1: String) =
-            FirstFragment().apply {
+            SecondFragment().apply {
                 arguments = Bundle().apply {
                     putString(TEXT_OF_FRAGMENT, param1)
                 }
